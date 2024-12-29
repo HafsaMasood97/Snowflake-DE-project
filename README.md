@@ -64,35 +64,31 @@ The workflow follows a structured approach, progressing from raw data ingestion 
 
 2. **Install Dependencies**:
 Ensure you have Python and pip installed, then run:
-
-```bash
-pip install -r requirements.txt
-
+   ```bash
+   pip install -r requirements.txt
+   ```
 3. **Configure GitHub Actions**:
-
-Set up workflows in the .github/workflows directory to automate data ingestion.
-Add environment variables (e.g., API keys) as secrets in your repository settings.
+- Set up workflows in the .github/workflows directory to automate data ingestion.
+- Add environment variables (e.g., API keys) as secrets in your repository settings.
 
 4. **Deploy to Snowflake**:
-
-Set up your Snowflake environment.
-Create the required tables for the Bronze, Silver, and Gold layers.
-Load data into the Bronze Layer using Snowflake's loading utilities.
+- Set up your Snowflake environment.
+- Create the required tables for the Bronze, Silver, and Gold layers.
+- Load data into the Bronze Layer using Snowflake's loading utilities.
 
 5. **Run BI Dashboard**:
 Launch the Streamlit app with the following command:
+   ```bash
+   streamlit run dashboard.py
+   ```
 
-```bash
+## **Features**
+- **Automated Workflows**: Hourly data updates through GitHub Actions.
+- **Data Integrity**: Layered architecture ensures reliable and clean datasets.
+- **Scalability**: Modular design accommodates additional data sources and layers.
+- **Ease of Use**: Intuitive BI dashboards provide actionable insights for non-technical users.
 
-streamlit run dashboard.py
-
-##**Features**
-Automated Workflows: Hourly data updates through GitHub Actions.
-Data Integrity: Layered architecture ensures reliable and clean datasets.
-Scalability: Modular design accommodates additional data sources and layers.
-Ease of Use: Intuitive BI dashboards provide actionable insights for non-technical users.
-
-##**Future Enhancements**
-Integrate real-time data ingestion using streaming platforms.
-Introduce machine learning pipelines for predictive analytics.
-Add advanced BI features, including alerts and notifications.
+## **Future Enhancements**
+- Integrate real-time data ingestion using streaming platforms.
+- Introduce machine learning pipelines for predictive analytics.
+- Add advanced BI features, including alerts and notifications.
