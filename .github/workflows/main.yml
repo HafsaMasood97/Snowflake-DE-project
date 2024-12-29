@@ -1,0 +1,26 @@
+name: india_air_quality_json
+
+on:
+  workflow_dispatch:
+# Uncomment the following lines if you want to add a schedule
+#  schedule:
+#     - cron: '45 * * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          home_dir=$(pwd)
+          echo $home_dir
+          echo -----------------------------------------------------------------------
+          pip install --upgrade pip    
+          echo -----------------------------------------------------------------------
+          pip install "snowflake-snowpark-python[pandas]"
+          echo -----------------------------------------------------------------------
+          ls -la
+          pwd
+          echo ----------------------------------------------------------------------- 
+          python $home_dir/ingest-api-data.py
